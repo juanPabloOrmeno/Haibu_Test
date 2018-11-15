@@ -1,12 +1,29 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
+import { URL_SERVICIO } from '../../config/url.servicios';
+
+
 
 
 @Injectable()
-export class UsuarioServiceProvider {
+export class UsuarioService {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello UsuarioServiceProvider Provider');
+
+  listaUsuarios:any[] = [];
+
+  constructor(public http: Http) {
+    this.cargarListaUsuarios();
   }
 
+  cargarListaUsuarios(){
+    let url =  URL_SERVICIO;
+
+    this.http.get( url )
+                .map( resp => resp.json() )
+                .subscribe( data =>{
+                  console.log( data );
+                  this.listaUsuarios.push( ...data);
+              })
+  }
 }
