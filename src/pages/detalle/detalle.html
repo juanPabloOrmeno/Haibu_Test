@@ -37,7 +37,7 @@
         <ion-card-content>
 
             <ion-card-title>
-                Direccion
+                Dirección
             </ion-card-title>
             <p>
                 Calle: {{ usuario.direccion.calle }}
@@ -45,14 +45,15 @@
             <p>
                 Numero: {{ usuario.direccion.numero }}
             </p>
-            <p *ngIf="usuario.direccion.comuna">
+            <p *ngIf="usuario.direccion.comuna && !usuario.direccion.comuna.nombre">
                 Comuna: {{ usuario.direccion.comuna }}
             </p>
             <p *ngIf="usuario.direccion.nombre">
                 Comuna: {{ usuario.direccion.nombre }}
             </p>
-
-
+            <p *ngIf="!usuario.direccion.nombre && usuario.direccion.comuna.nombre">
+                Comuna: {{ usuario.direccion.comuna.nombre }}
+            </p>
         </ion-card-content>
     </ion-card>
 
