@@ -12,6 +12,7 @@ import { DetallePage } from '../pages/detalle/detalle';
 
 //servicios
 import { UsuarioService } from '../providers/usuario-service/usuario-service';
+import { ValidarServiceProvider } from '../providers/validar-service/validar-service';
 
 
 
@@ -37,6 +38,7 @@ import { UsuarioService } from '../providers/usuario-service/usuario-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsuarioService,
+    ValidarServiceProvider,
   ]
 })
 export class AppModule {}
