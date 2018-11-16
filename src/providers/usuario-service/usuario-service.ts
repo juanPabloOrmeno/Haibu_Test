@@ -24,9 +24,11 @@ export class UsuarioService {
     this.http.get( url )
                 .map( resp => resp.json() )
                 .subscribe( data =>{
-                  console.log( data );
-                  this.listaUsuarios.push( ...data);
-                  this.items.push( ...data);
+
+                  this.listaUsuarios = data.filter(item => item.activo == '1');
+                  this.items = data.filter(item => item.activo == '1');
+                  console.log( data.filter(item => item.activo == '1'));
+                  
               })
   }
 
