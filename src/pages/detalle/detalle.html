@@ -20,14 +20,21 @@
             <p>
                 apellido: {{ usuario.apellido }}
             </p>
-            <p>
+            <p *ngIf="rut">
                 rut: {{ usuario.rut }}
+            </p>
+            <p *ngIf="!rut" class="error">
+                rut: Invalido
             </p>
             <p>
                 telefono: {{ usuario.telefono }}
             </p>
-            <p>
-                fecha de Nacimiento: {{ usuario.fechaNacimiento }}
+            <p *ngIf="fechaNac">
+                fecha de Nacimiento: {{ usuario.fechaNacimiento | date }}
+            </p>
+
+            <p *ngIf="!fechaNac" class="error">
+                fecha de Nacimiento: Invalida
             </p>
         </ion-card-content>
     </ion-card>

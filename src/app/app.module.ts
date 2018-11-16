@@ -15,7 +15,6 @@ import { UsuarioService } from '../providers/usuario-service/usuario-service';
 import { ValidarServiceProvider } from '../providers/validar-service/validar-service';
 
 
-
 @NgModule({
   declarations: [
     MyApp,
