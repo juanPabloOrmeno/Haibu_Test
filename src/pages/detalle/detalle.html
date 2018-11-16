@@ -1,12 +1,34 @@
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>{{ usuario.nombre }}</ion-title>
+    <ion-navbar color="primary">
+        <ion-title>{{ usuario.nombre + " " + usuario.apellido }}</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-card-title>
+                nombre: {{ usuario.nombre }}
+            </ion-card-title>
+            <p>
+                apellido: {{ usuario.apellido }}
+            </p>
+            <p>
+                rut: {{ usuario.rut }}
+            </p>
+            <p>
+                telefono: {{ usuario.telefono }}
+            </p>
+            <p>
+                fecha de Nacimiento: {{ usuario.fechaNacimiento }}
+            </p>
+
+
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>

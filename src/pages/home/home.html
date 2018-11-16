@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title>
             Haibu Test
         </ion-title>
@@ -7,6 +7,8 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-searchbar></ion-searchbar>
+
     <ion-list>
         <button ion-item [navPush]=" categoriaPage " [navParams]="{ usuarios: item }" *ngFor="let item of usuService.listaUsuarios">
         {{ item.nombre }}

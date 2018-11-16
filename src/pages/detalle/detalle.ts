@@ -10,10 +10,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class DetallePage {
 
   usuario:any = {};
+  direccion:any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     console.log(navParams.get("usuarios"))
     this.usuario = this.navParams.get("usuarios");
+    
   }
 
   
