@@ -27,7 +27,7 @@
                 rut: Invalido
             </p>
             <p>
-                telefono: {{ usuario.telefono }}
+                telefono: {{ usuario.telefono | phone }}
             </p>
             <p *ngIf="fechaNac">
                 fecha de Nacimiento: {{ usuario.fechaNacimiento | date }}
