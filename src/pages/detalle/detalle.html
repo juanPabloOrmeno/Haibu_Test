@@ -12,8 +12,11 @@
     <ion-card>
         <ion-card-content>
             <ion-card-title>
-                nombre: {{ usuario.nombre }}
+                Datos Personales
             </ion-card-title>
+            <p>
+                nombre: {{ usuario.nombre }}
+            </p>
             <p>
                 apellido: {{ usuario.apellido }}
             </p>
@@ -25,6 +28,28 @@
             </p>
             <p>
                 fecha de Nacimiento: {{ usuario.fechaNacimiento }}
+            </p>
+        </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+        <ion-card-content>
+
+            <ion-card-title>
+                Direccion
+            </ion-card-title>
+            <p>
+                Calle: {{ usuario.direccion.calle }}
+            </p>
+            <p>
+                Numero: {{ usuario.direccion.numero }}
+            </p>
+            <p *ngIf="usuario.direccion.comuna">
+                Comuna: {{ usuario.direccion.comuna }}
+            </p>
+            <p *ngIf="usuario.direccion.nombre">
+                Comuna: {{ usuario.direccion.nombre }}
             </p>
 
 
