@@ -7,10 +7,10 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar (ionInput)="usuService.getItems($event)"></ion-searchbar>
 
     <ion-list>
-        <button ion-item [navPush]=" categoriaPage " [navParams]="{ usuarios: item }" *ngFor="let item of usuService.listaUsuarios">
+        <button ion-item [navPush]=" categoriaPage " [navParams]="{ usuarios: item }" *ngFor="let item of usuService.items">
         {{ item.nombre }}
       </button>
     </ion-list>

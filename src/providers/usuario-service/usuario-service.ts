@@ -11,12 +11,14 @@ export class UsuarioService {
 
 
   listaUsuarios:any[] = [];
+  items: any = [];
 
   constructor(public http: Http) {
     this.cargarListaUsuarios();
   }
 
   cargarListaUsuarios(){
+    this.listaUsuarios = [];
     let url =  URL_SERVICIO;
 
     this.http.get( url )
@@ -24,6 +26,28 @@ export class UsuarioService {
                 .subscribe( data =>{
                   console.log( data );
                   this.listaUsuarios.push( ...data);
+                  this.items.push( ...data);
               })
   }
+
+  
+
+
+
+  getItems(ev: any) {
+   
+    this.items = [];
+    this.items = this.listaUsuarios;
+
+    const val = ev.target.value;
+
+    if (val && val.trim() != '') {
+      this.items = this.listaUsuarios.filter((item) => {
+        return (item.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+
+
 }
