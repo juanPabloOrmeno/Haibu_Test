@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar (ionInput)="usuService.getItems($event)"></ion-searchbar>
+    <ion-searchbar (ionInput)="usuService.filtroUsuario($event)"></ion-searchbar>
 
     <ion-list>
         <button ion-item [navPush]=" categoriaPage " [navParams]="{ usuarios: item }" *ngFor="let item of usuService.items">

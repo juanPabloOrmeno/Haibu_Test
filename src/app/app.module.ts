@@ -14,16 +14,14 @@ import { DetallePage } from '../pages/detalle/detalle';
 import { UsuarioService } from '../providers/usuario-service/usuario-service';
 import { ValidarServiceProvider } from '../providers/validar-service/validar-service';
 
-//pipes
-import { PhonePipe } from '../pipes/phone/phone';
+
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetallePage,
-    PhonePipe
+    DetallePage
   ],
   imports: [
     BrowserModule,

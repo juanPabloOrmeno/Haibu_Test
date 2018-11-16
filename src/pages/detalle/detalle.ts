@@ -16,23 +16,25 @@ export class DetallePage {
 
   rut:any;
   fechaNac:any;
+  telefono: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public validar: ValidarServiceProvider) {
-    console.log(navParams.get("usuarios"))
+    
     this.usuario = this.navParams.get("usuarios");
-    //this.usuario.rut = (validar.checkRut(this.usuario.rut));
-
-
+    
+    //validaciones
+    //rut
     this.rut = validar.Rut(this.usuario.rut);
     if(validar.Rut(this.usuario.rut)){
       this.usuario.rut = this.validar.formateaRut(this.usuario.rut);
     }
 
-    
+    //fecha nacimiento
     this.fechaNac = validar.validarFecha(this.usuario.fechaNacimiento);
-    
-    
-
+    //telefono
+    this.telefono = validar.transformPhono(this.usuario.telefono);
   }
+
+  
 }

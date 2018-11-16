@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { INVALID } from '@angular/forms/src/model';
+
 
 
 @Injectable()
@@ -163,6 +162,19 @@ Rut(texto)
 		return true;	
 
 	return false;
+}
+
+
+
+transformPhono(tel)
+{
+    var value = tel.toString().trim().replace(/^\+/, '');
+
+    if (value.match(/[^0-9]/)) {
+        return tel;
+    }
+
+    return value.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, '$1-$2-$3-$4');
 }
 
 

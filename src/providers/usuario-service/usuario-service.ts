@@ -27,7 +27,7 @@ export class UsuarioService {
 
                   this.listaUsuarios = data.filter(item => item.activo == '1');
                   this.items = data.filter(item => item.activo == '1');
-                  console.log( data.filter(item => item.activo == '1'));
+                  //console.log( data.filter(item => item.activo == '1'));
                   
               })
   }
@@ -36,7 +36,7 @@ export class UsuarioService {
 
 
 
-  getItems(ev: any) {
+  filtroUsuario(ev: any) {
    
     this.items = [];
     this.items = this.listaUsuarios;
