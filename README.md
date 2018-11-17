@@ -1,6 +1,6 @@
-# Objetivos del repositorio
+## Objetivos del repositorio
 
-## 1 Objetivo 
+### 1 Objetivo 
  
 El objetivo de este proyecto es ver el nivel actual que tienes como desarrollador móvil, esto nos permitirá saber si cumples con los requisitos mínimos para trabajar en la posición que tenemos para ti. Dentro de lo que buscamos con este ejercicio es validar lo siguiente:   
 
@@ -10,7 +10,7 @@ El objetivo de este proyecto es ver el nivel actual que tienes como desarrollado
 4.  Toma de decisiones 
 5.  Resolución de problemas 
  
-## 2   Aplicación Móvil 
+### 2   Aplicación Móvil 
  
 Se desea la construcción de una aplicación que permita encontrar personas que pertenecen a la empresa Haibu, además se necesita poder filtrar estos en base al nombre de la persona. 
  
@@ -34,7 +34,7 @@ La aplicación debe estar en ionic 3 o superior, importante que todas las depend
  
 No nos interesa ver qué tan “bonita” es la aplicación,  sino que sea funcional. Por esto no importa si utilizas solo los componentes nativos, sin íconos ni que tenga experiencia UX.  
  
-## 3   API 
+### 3   API 
  
 Para obtener los datos desde nuestra API REST, debes llamar al servicio indicado a continuación con el método GET: 
  
