@@ -30,7 +30,7 @@
                 Teléfono: {{ telefono }}
             </p>
             <p *ngIf="fechaNac">
-                Fecha de nacimiento: {{ usuario.fechaNacimiento | date }}
+                Fecha de nacimiento: {{ usuario.fechaNacimiento | date: 'dd-MM-yyyy' }}
             </p>
 
             <p *ngIf="!fechaNac" class="error">
