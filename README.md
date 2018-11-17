@@ -1,3 +1,10 @@
+## Datos tecnicos
+
+Ionic version 4.3.1
+
+
+
+
 ## Objetivos del repositorio
 
 ### 1 Objetivo 
