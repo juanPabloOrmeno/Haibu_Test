@@ -15,26 +15,26 @@
                 Datos Personales
             </ion-card-title>
             <p>
-                nombre: {{ usuario.nombre }}
+                Nombre: {{ usuario.nombre }}
             </p>
             <p>
-                apellido: {{ usuario.apellido }}
+                Apellido: {{ usuario.apellido }}
             </p>
             <p *ngIf="rut">
-                rut: {{ usuario.rut }}
+                Rut: {{ usuario.rut }}
             </p>
             <p *ngIf="!rut" class="error">
-                rut: Invalido
+                Rut: Invalido
             </p>
             <p>
-                telefono: {{ telefono }}
+                Teléfono: {{ telefono }}
             </p>
             <p *ngIf="fechaNac">
-                fecha de Nacimiento: {{ usuario.fechaNacimiento | date }}
+                Fecha de nacimiento: {{ usuario.fechaNacimiento | date }}
             </p>
 
             <p *ngIf="!fechaNac" class="error">
-                fecha de Nacimiento: Invalida
+                Fecha de nacimiento: Invalida
             </p>
         </ion-card-content>
     </ion-card>
