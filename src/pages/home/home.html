@@ -3,10 +3,17 @@
         <ion-title>
             Haibu Test
         </ion-title>
+
+
     </ion-navbar>
 </ion-header>
 
 <ion-content>
+    <ion-item color="light">
+        <ion-label>Usuarios Activos</ion-label>
+        <ion-toggle color="primary" [(ngModel)]="usuariosActivos" (ngModelChange)="verTipoUsuario()"></ion-toggle>
+    </ion-item>
+
     <ion-searchbar (ionInput)="usuService.filtroUsuario($event)"></ion-searchbar>
 
     <ion-list>

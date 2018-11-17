@@ -14,10 +14,10 @@ export class UsuarioService {
   items: any = [];
 
   constructor(public http: Http) {
-    this.cargarListaUsuarios();
+    this.cargarListaUsuarios("1");
   }
 
-  cargarListaUsuarios(){
+  cargarListaUsuarios(filtro: string){
     this.listaUsuarios = [];
     let url =  URL_SERVICIO;
 
@@ -25,9 +25,9 @@ export class UsuarioService {
                 .map( resp => resp.json() )
                 .subscribe( data =>{
 
-                  this.listaUsuarios = data.filter(item => item.activo == '1');
-                  this.items = data.filter(item => item.activo == '1');
-                  //console.log( data.filter(item => item.activo == '1'));
+                  this.listaUsuarios = data.filter(item => item.activo == filtro);
+                  this.items = data.filter(item => item.activo == filtro);
+                  
                   
               })
   }
