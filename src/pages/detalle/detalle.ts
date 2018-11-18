@@ -13,7 +13,9 @@ export class DetallePage {
 
   usuario:any = {};
   direccion:any = {};
+  
 
+  comuna: any;
   rut:any;
   fechaNac:any;
   telefono: any;
@@ -24,6 +26,14 @@ export class DetallePage {
     this.usuario = this.navParams.get("usuarios");
 
     //validaciones
+
+
+    //comuna
+    validar.getComuna(this.usuario)
+            .then(comuna => this.comuna = comuna)
+            .catch(err => console.log(err) );
+
+
     //rut
     this.rut = validar.Rut(this.usuario.rut);
     if(validar.Rut(this.usuario.rut)){

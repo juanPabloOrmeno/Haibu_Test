@@ -6,6 +6,27 @@ export class ValidarServiceProvider {
 
 
 
+getComuna(usuario){
+	return new Promise(( resolve, reject )=> {
+
+		if(usuario.direccion.comuna && usuario.direccion.comuna.nombre){
+			resolve( usuario.direccion.comuna.nombre );
+		}
+		if(usuario.direccion.comuna){
+			resolve( usuario.direccion.comuna );
+		}
+		if(usuario.direccion.nombre) {
+			resolve( usuario.direccion.nombre );
+		}
+		else{
+			reject( "Direccion no encontrada" );
+		}
+	})
+}
+
+
+
+
 formateaRut(rut) {
  
   var actual = rut.replace(/^0+/, "");

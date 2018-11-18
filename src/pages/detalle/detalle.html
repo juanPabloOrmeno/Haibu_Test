@@ -54,15 +54,10 @@
             <p>
                 Numero: {{ usuario.direccion.numero }}
             </p>
-            <p *ngIf="usuario.direccion.comuna && !usuario.direccion.comuna.nombre">
-                Comuna: {{ usuario.direccion.comuna }}
+            <p>
+                Comuna: {{ comuna }}
             </p>
-            <p *ngIf="usuario.direccion.nombre">
-                Comuna: {{ usuario.direccion.nombre }}
-            </p>
-            <p *ngIf="!usuario.direccion.nombre && usuario.direccion.comuna.nombre">
-                Comuna: {{ usuario.direccion.comuna.nombre }}
-            </p>
+
         </ion-card-content>
     </ion-card>
 
