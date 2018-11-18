@@ -22,7 +22,7 @@ export class DetallePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public validar: ValidarServiceProvider) {
     
     this.usuario = this.navParams.get("usuarios");
-    
+
     //validaciones
     //rut
     this.rut = validar.Rut(this.usuario.rut);
@@ -31,7 +31,11 @@ export class DetallePage {
     }
 
     //fecha nacimiento
-    this.fechaNac = validar.validarFecha(this.usuario.fechaNacimiento);
+    validar.getFecha(this.usuario.fechaNacimiento)
+            .then(fecha => this.fechaNac = fecha)
+            .catch(err => this.fechaNac = err);
+
+
     //telefono
     this.telefono = validar.transformPhono(this.usuario.telefono);
   }

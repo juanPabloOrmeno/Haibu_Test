@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 
-
 @Injectable()
 export class ValidarServiceProvider {
 
@@ -31,19 +30,18 @@ formateaRut(rut) {
   return rutPuntos;
 }
 
-validarFecha(fecha: any){
-  if(new Date(fecha).getFullYear() > 1900){
-    if(new Date(fecha).getMonth() < 13){
-      if(new Date(fecha).getDay() < 31){
-        return true;
-      }
-    }
-  }
-    return false;
+
+
+
+getFecha(fecha){
+	return new Promise(( resolve, reject )=> {
+		if(new Date(fecha).toLocaleString() === "Invalid Date"){
+			reject( new Error("fecha no Valida") );
+		}else{
+			resolve( new Date(fecha) );
+		}
+	})
 }
-
-
-
 
 
 

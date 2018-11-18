@@ -27,10 +27,9 @@ export class UsuarioService {
 
                   this.listaUsuarios = data.filter(item => item.activo == filtro);
                   this.items = data.filter(item => item.activo == filtro);
-                  
-                  
               })
   }
+
 
   
 

@@ -29,13 +29,15 @@
             <p>
                 Teléfono: {{ telefono }}
             </p>
-            <p *ngIf="fechaNac">
-                Fecha de nacimiento: {{ usuario.fechaNacimiento | date: 'dd-MM-yyyy' }}
+            <p *ngIf="!(fechaNac == 'Error: fecha no Valida')">
+                Fecha de nacimiento: {{ fechaNac | date: 'dd-MM-yyyy' }}
             </p>
 
-            <p *ngIf="!fechaNac" class="error">
-                Fecha de nacimiento: Invalida
+            <p *ngIf="(fechaNac == 'Error: fecha no Valida')" class="error">
+                Fecha de nacimiento: {{ fechaNac }}
             </p>
+
+
         </ion-card-content>
     </ion-card>
 
