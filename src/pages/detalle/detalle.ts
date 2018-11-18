@@ -43,7 +43,7 @@ export class DetallePage {
     //fecha nacimiento
     validar.getFecha(this.usuario.fechaNacimiento)
             .then(fecha => this.fechaNac = fecha)
-            .catch(err => this.fechaNac = err);
+            .catch(err => this.fechaNac = "Invalida");
 
 
     //telefono

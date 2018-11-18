@@ -29,11 +29,11 @@
             <p>
                 Teléfono: {{ telefono }}
             </p>
-            <p *ngIf="!(fechaNac == 'Error: fecha no Valida')">
+            <p *ngIf="!(fechaNac == 'Invalida')">
                 Fecha de nacimiento: {{ fechaNac | date: 'dd-MM-yyyy' }}
             </p>
 
-            <p *ngIf="(fechaNac == 'Error: fecha no Valida')" class="error">
+            <p *ngIf="(fechaNac == 'Invalida')" class="error">
                 Fecha de nacimiento: {{ fechaNac }}
             </p>
 
