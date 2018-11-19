@@ -2,6 +2,7 @@ import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { URL_SERVICIO } from '../../config/url.servicios';
+import {  LoadingController } from 'ionic-angular'
 
 
 
@@ -13,7 +14,7 @@ export class UsuarioService {
   listaUsuarios:any[] = [];
   items: any = [];
 
-  constructor(public http: Http) {
+  constructor(public http: Http ,  public loadinCrt: LoadingController) {
     this.cargarListaUsuarios("1");
   }
 
@@ -21,12 +22,21 @@ export class UsuarioService {
     this.listaUsuarios = [];
     let url =  URL_SERVICIO;
 
+
+    let loading = this.loadinCrt.create({
+        content: 'cargando'
+    });
+
+    loading.present();
+
     this.http.get( url )
                 .map( resp => resp.json() )
                 .subscribe( data =>{
 
                   this.listaUsuarios = data.filter(item => item.activo == filtro);
                   this.items = data.filter(item => item.activo == filtro);
+
+                  loading.dismiss();
               })
   }
 

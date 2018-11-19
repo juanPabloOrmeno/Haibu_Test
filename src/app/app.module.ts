@@ -26,8 +26,10 @@ import { ValidarServiceProvider } from '../providers/validar-service/validar-ser
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
-  ],
+    IonicModule.forRoot(MyApp,{
+      backButtonText: 'Atras',
+    },
+  )],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
